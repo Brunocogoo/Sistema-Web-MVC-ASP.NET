@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Adcionar Filme";
+    if ((int)Session["nivel"] == 1) { Layout = "~/Views/Shared/_Layoutadm.cshtml"; }
+}
+
+<form method='POST' class="navbar-form navbar-left" enctype = "multipart/form-data">
+    <div style="  width:280px;    position: fixed; left: 50%;    margin-top: 50 px;    margin-left: -130px; opacity:0.8;">
+        <h2>@ViewBag.Title</h2>
+        <div class="form-group">
+
+            <input style="margin-top:15px;" type='text' class="form-control" name='cod' placeholder="Código" required >
+            <br>
+
+            <input style="margin-top:5px;"  type='text' class="form-control" name='nome' placeholder='Nome' required>
+            <br>
+
+            <input  style="margin-top:5px;"  type='hidden' value="0" class="form-control" name='genero' placeholder='Gênero' required>
+            <br>
+
+            <input style="margin-top:5px;"  type='hidden' value="0" class="form-control" name='duracao' placeholder='Duração (HH:MM:SS)' required>
+            <br>
+
+            <input style="margin-top:5px;" type='hidden'value="0" class="form-control" name='diretor' placeholder='Diretor' required>
+            <br>
+            <input style="margin-top:5px;" type='text' class="form-control" name='videoref' placeholder='Nome do Video' required>
+            <br>
+            <label for="file">Upload Image:</label>
+            <input type="file" name="file" id="file" style="width: 100%;"  required/> 
+        
+
+            <center>
+        <input style="margin-top:5px;" type='submit' value='enviar' name='btnEnviar' class="btn btn-success"></center>
+    </div>
+</form>
+</div>
+

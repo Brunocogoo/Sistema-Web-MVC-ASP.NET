@@ -1,0 +1,37 @@
+﻿@model WebApplication1.Models.filmespojo
+@{
+    ViewBag.Title = "Home Page";
+    if ((int)Session["nivel"] == 1) { Layout = "~/Views/Shared/_Layoutadm.cshtml"; }
+}
+
+<form method='POST' class="navbar-form navbar-left" >
+    <div style="  width:280px;    position: fixed; left: 50%;    margin-top: 50px;    margin-left: -130px; opacity:0.8;">
+        <h2>@ViewBag.Title</h2>
+        <div class="form-group">
+
+            <input style="margin-top:15px;" type='text' class="form-control" name='cod'  value="@Model.cod" disabled>
+            <br>
+
+            <input style="margin-top:5px;" type='text' class="form-control" name='nome' value='@Model.nome' required>
+            <br>
+
+            <input style="margin-top:5px;" type='text' class="form-control" name='genero' value='@Model.genero' required>
+            <br>
+
+            <input style="margin-top:5px;" type='text' class="form-control" name='duracao' value='@Model.duracao' required>
+            <br>
+
+            <input style="margin-top:5px;" type='text' class="form-control" name='diretor' value='@Model.diretor' required>
+            <br>
+
+            <input style="margin-top:5px;" type='text' class="form-control" name='videoref' value='@Model.videoref' required>
+            <br>
+
+
+            <center>
+                <input style="margin-top:5px;" type='submit' value='enviar' name='btnEnviar' class="btn btn-success">
+            </center>
+        </div>
+</form>
+</div>
+

@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/Layout2.cshtml";
+}
+<div style="margin-bottom:1px; padding-bottom:10px; ">
+    <center><img src="~/img/fourstarlogo.png"</center>
+</div>
+
+
+    <div  style="  width:280px;    position: absolute; left: 50%;    margin-top: 100px; margin-bottom: 50px;   margin-left: -130px; opacity:0.8;">
+        <form class="navbar-form navbar-left" method='POST'>
+            <input type='email' class="form-control" placeholder="Email" name='email' required>
+
+            <input type='password' class="form-control" placeholder="Senha" name='senha' required>
+            <center>  <button style="margin-top:10px;" type="submit" class="btn btn-success" name='btnlogar'>Logar</button><br>
+                <a href="@Url.Action("Cadastrousuario","Login")">Não tem uma conta? Cadastre-se</a>
+            </center>
+        </form>
+       
+        </div><br>
+   
+    
+
+
+

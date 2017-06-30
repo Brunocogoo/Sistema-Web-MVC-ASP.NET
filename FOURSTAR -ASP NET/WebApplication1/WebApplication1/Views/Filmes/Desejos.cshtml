@@ -1,0 +1,49 @@
+﻿@model List<WebApplication1.Models.filmespojo>
+@{
+    ViewBag.Title = "Desejos";
+    if ((int)Session["nivel"] == 1) { Layout = "~/Views/Shared/_Layoutadm.cshtml"; }
+}
+<h2>@ViewBag.Title</h2>
+
+
+
+
+<table class="table" cborder="01" bgcolor="#00FF00">
+    <tr bgcolor="#FFFFFF">
+        <th bgcolor="#FFFFFF">Thumbnail</th>
+        <th bgcolor="#FFFFFF">Codigo</th>
+        <th bgcolor="#FFFFFF">Nota Imdb</th>
+        <th bgcolor="#FFFFFF">Nome</th>
+        <th bgcolor="#FFFFFF">Gênero</th>
+        <th bgcolor="#FFFFFF">Duração</th>
+        <th bgcolor="#FFFFFF">Diretor</th>
+        <th bgcolor="#FFFFFF">Ação</th>
+
+    </tr>
+
+    @for (var i = 0; i < Model.Count; i++)
+    {
+        <tr bgcolor="#FFFFFF">
+            <td bgcolor="#FFFFFF"><img src="~/img/upload/@Model[i].imagemref" height="42" width="42"></td>
+            <td bgcolor="#FFFFFF">@Model[i].cod</td>
+            <td bgcolor="#FFFFFF">@Model[i].imdbrating</td>
+            <td bgcolor="#FFFFFF">@Model[i].nome</td>
+            <td bgcolor="#FFFFFF">@Model[i].genero</td>
+            <td bgcolor="#FFFFFF">@Model[i].duracao</td>
+            <td bgcolor="#FFFFFF">@Model[i].diretor</td>
+            <left>
+                <td bgcolor="#FFFFFF">
+                    <left>
+
+
+
+                        <a href="@Url.Action("Inserirassistidos", "Filmes", new { cod = @Model[i].cod })" id=4 class="btn btn-default " role="button">Assistir</a>
+                        <a href="@Url.Action("Desejosremover", "Filmes", new { cod = @Model[i].cod })" class="btn btn-danger " role="button" type="submit"><span class="glyphicon glyphicon-trash"></span></a>
+
+
+
+
+                </td>
+
+        </tr>
+    }
